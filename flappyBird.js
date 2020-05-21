@@ -1,7 +1,7 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-var constant; // pipe contanst calcolated by adding the pipe gap and the end of top pipe. Determines the starting point of the bottom pipe.
+var constant; // pipe constant which determines the starting point of the bottom pipe.
 var score = 0;
 const pipeGap = 85; // Gap between the top and bottom pipe.
 const gravity = 1.5; // speed in which the bird drops to the ground
@@ -89,7 +89,7 @@ function draw() {
  * @param index Index of the current pipe object
  */
 function addNewPipes(index) {
-    //TODO(Sudarshan): Make the logic of adding new pipes more dynamic wrt the screen size. ALso ensure random pipe sizes are within bounds.  
+    //TODO(Sudarshan): Make the logic of adding new pipes more dynamic wrt the screen size. Also ensure random pipe sizes are well within bounds.  
     if (pipe[index].x === 25) {
         pipe.push({
             x : canvas.width,
@@ -97,11 +97,12 @@ function addNewPipes(index) {
         });
     }
 }
+
 /** 
  * Detecting if there is a collision. Could be one of the following reasons,
- * 1. hits the top pipe face front or when in between the pipes
- * 2. hits the bottom pipe face front or when in between the pipes
- * 3. hits the ground
+ * 1. Hits the top pipe face front or when in between the pipes
+ * 2. Hits the bottom pipe face front or when in between the pipes
+ * 3. Hits the ground
  * @param index Index of the current pipe object
  */
 function detectCollision(index) {
