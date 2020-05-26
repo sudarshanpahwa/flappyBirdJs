@@ -55,6 +55,7 @@ function initResources() {
  */
 function moveUp(evt) {
     birdY -= 25;
+    flySound.currentTime = 0; // Reset the audio's current time to play the flying sound everytime a key is pressed.
     flySound.play();
 }
 
